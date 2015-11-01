@@ -16,8 +16,10 @@ import org.springframework.web.servlet.view.JstlView;
  * Time: 6:49 AM
  * To change this template use File | Settings | File Templates.
  */
+@EnableWebMvc
 @Configuration
-@ComponentScan
+@ComponentScan({"com.springapp.*"})
+@Import({SecurityConfig.class})
 public class AppConfig {
 
     // Create a DataSource to connect MySQL
@@ -25,7 +27,7 @@ public class AppConfig {
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/SPRING_SECURITY_LOGIN_ATTEMPTS_DB");
+        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/SPRING_SECURITY_DB_LOGIN_ATTEMPTS");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("root");
         return driverManagerDataSource;
@@ -41,6 +43,7 @@ public class AppConfig {
     }
 
 }
+
 
 /*
 

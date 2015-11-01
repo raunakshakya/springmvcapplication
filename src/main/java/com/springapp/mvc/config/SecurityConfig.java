@@ -46,6 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 }
 
+
 /*
 
 The equivalent of the Spring Security XML file :
