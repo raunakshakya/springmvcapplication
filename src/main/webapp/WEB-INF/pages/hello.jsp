@@ -1,6 +1,7 @@
 <%-- Default page, show the use of Spring Security JSP taglib sec:authorize to display content to users who have “ROLE_USER” authority. --%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <html>
 <body>
@@ -30,3 +31,8 @@
 </sec:authorize>
 </body>
 </html>
+
+<%-- Include resources in jsp - Method 1 --%>
+<spring:url value="/resources/js/external/angular-1.4.8.min.js" var="angularjs" />
+
+<script src="${angularjs}"></script>
