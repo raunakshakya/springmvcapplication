@@ -55,7 +55,7 @@ public class AppConfig {
     public HibernateTransactionManager txManager() {
         return new HibernateTransactionManager(sessionFactory());
     }
-		
+
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();

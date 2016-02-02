@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,6 +58,30 @@ public class MainController {
         return model;
 
     }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView register(@RequestParam(value = "error", required = false) String error,
+                              @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
+
+        ModelAndView model = new ModelAndView();
+
+        model.setViewName("register");
+
+        return model;
+
+    }
+
+/*    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ModelAndView register(@ModelAttribute("username") String username, @ModelAttribute("password") String password) {
+
+        ModelAndView model = new ModelAndView();
+        model.addObject("title", "Spring Security + Hibernate Example");
+        model.addObject("message", "This is home page!" + username + " " + password);
+        model.setViewName("hello");
+
+        return model;
+
+    }*/
 
     // customize the error message
     private String getErrorMessage(HttpServletRequest request, String key) {
