@@ -21,7 +21,7 @@
         <developer>
             <id>rshakya</id>
             <name>Raunak Shakya</name>
-            <email>rshakya99@gmail.com</email>
+            <email>rkshakya99@gmail.com</email>
         </developer>
     </developers>
 
@@ -147,6 +147,17 @@
             <version>${servletapi.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <!--
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        -->
 
         <dependency>
             <groupId>org.springframework</groupId>
