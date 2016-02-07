@@ -40,9 +40,8 @@
             e.preventDefault();
             console.log("submitting form...");
 
-            //console.log(widget.element);
             var dataObj = {
-                    data: JSON.stringify({name: "Raunak"}) // TODO(RS) get form data
+                    data: getFormData(widget.element.find("form"))
                 },
                 ajaxSettings = $.extend({}, widget.settings.ajaxOptions, dataObj);
 
@@ -50,7 +49,7 @@
                 doCallback(widget.element, widget.settings.successMessage, widget.settings.successClass);
             }).fail(function (response) {
                 var returnVal = widget.element.triggerHandler("responseerror.form", response);
-                if (returnVal != false) {
+                if (returnVal !== false) {
                     doCallback(widget.element, widget.settings.errorMessage, widget.settings.errorClass);
                 }
             });
@@ -60,7 +59,7 @@
         $.each(widget.settings, function (key, val) {
             if (typeof val == "function") {
                 widget.element.on(key + ".form", function (e, params) {
-                    val(e, widget.element, params);
+                    return val(e, widget.element, params);
                 });
             }
         });
@@ -77,11 +76,13 @@
             indexed_array[n['name']] = n['value'];
         });
 
+        console.log(indexed_array);
+
         return indexed_array;
     }
 
     function doCallback(element, message, classname) {
-        element.find("form").remove();
+        //element.find("form").remove();
 
         element.append($("<p/>", {
             text: message,

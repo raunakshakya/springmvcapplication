@@ -33,7 +33,7 @@
                 headers: {
                     "X-REQUESTED-BY": "form"
                 },
-                url: "/api/create"
+                url: "/create"
             },
             fields: [
                 {label: "First Name", type: "text"},
@@ -45,10 +45,10 @@
             ],
             submitLabel: "Create Employer",
             /*created: function (e) {
-                console.log("created triggered! " + e.attr("id"));
-            }*/
-            responseerror: function(e, el, response) {
-                console.log("[ERROR] >> " + response);
+             console.log("created triggered! " + e.attr("id"));
+             }*/
+            responseerror: function (e, el, response) {
+                console.log(response);
                 //el.remove();
                 return false;
             }
