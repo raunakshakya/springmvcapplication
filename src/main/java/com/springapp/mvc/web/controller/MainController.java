@@ -61,11 +61,23 @@ public class MainController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView register(@RequestParam(value = "error", required = false) String error,
-                              @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
+                                 @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
 
         ModelAndView model = new ModelAndView();
 
         model.setViewName("register");
+
+        return model;
+
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public ModelAndView create(@RequestParam(value = "error", required = false) String error,
+                                 @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
+
+        ModelAndView model = new ModelAndView();
+
+        model.setViewName("form");
 
         return model;
 

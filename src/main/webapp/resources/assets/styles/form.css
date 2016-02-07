@@ -1,0 +1,41 @@
+h1 {
+    margin: 10px auto;
+}
+
+.inputGroup {
+    text-align: left;
+    padding: 6px 10px;
+}
+
+.inputLabel, .inputElement {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.inputLabel {
+    text-align: right;
+    width: 30% !important;
+    margin-right: 5%;
+}
+
+.inputElement {
+    width: 65% !important;
+}
+
+.inputElement input {
+    border-radius: 4px;
+    padding: 8px 7px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.inputSubmit {
+    width: 100%;
+    background-color: #43A1C5;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 16px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
