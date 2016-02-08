@@ -24,7 +24,7 @@ public class AppTests {
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     protected WebApplicationContext wac;
-/*
+
     @Before
     public void setup() {
         this.mockMvc = webAppContextSetup(this.wac).build();
@@ -36,5 +36,5 @@ public class AppTests {
                 .andExpect(status().isOk())
                 .andExpect(view().name("hello"));
     }
-*/
+
 }
